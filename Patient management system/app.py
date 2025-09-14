@@ -1,20 +1,35 @@
+from flask import Flask, render_template, request
+
+# Create Flask app
 app = Flask(__name__)
 
-# In-memory database (for demo purposes)
-patients = []
-
-@app.route("/")
+# Route for homepage
+@app.route('/')
 def index():
-    return render_template("index.html", patients=patients)
+    return render_template('index.html')
 
-@app.route("/add", methods=["POST"])
-def add_patient():
-    name = request.form.get("name")
-    age = request.form.get("age")
-    condition = request.form.get("condition")
-    if name and age and condition:
-        patients.append({"name": name, "age": age, "condition": condition})
-    return redirect(url_for("index"))
+# Route to handle form submission
+@app.route('/submit', methods=['POST'])
+def submit():
+    patient_id = request.form['patient-id']
+    full_name = request.form['full-name']
+    dob = request.form['dob']
+    gender = request.form['gender']
+    admission_date = request.form['admission-date']
+    ward_bed = request.form['ward-bed']
+    admitting_reason = request.form['admitting-reason']
+
+    # For now, just return details (later you can save to DB)
+    return f"""
+    <h2>Patient Saved!</h2>
+    <p><b>ID:</b> {patient_id}</p>
+    <p><b>Name:</b> {full_name}</p>
+    <p><b>DOB:</b> {dob}</p>
+    <p><b>Gender:</b> {gender}</p>
+    <p><b>Admission Date:</b> {admission_date}</p>
+    <p><b>Ward/Bed:</b> {ward_bed}</p>
+    <p><b>Reason:</b> {admitting_reason}</p>
+    """
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(debug=True)
