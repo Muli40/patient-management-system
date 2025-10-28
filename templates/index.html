@@ -1,67 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PATIENT MANAGEMENT SYSTEM FOR NGIGI'S HOSPITAL</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Patient Management System</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Patient Details</h1>
-        </header>
+  <!-- ============================
+       NAVIGATION BAR
+  ============================ -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🩺 Patient Management</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="patients.html">Patients</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="appointments.html">Appointments</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="#" class="logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <main class="form-container">
-           <form id="patient-form" method="POST" action="/submit">
-                <div class="form-group">
-                    <label for="patient-id">Patient ID</label>
-                    <input type="text" id="patient-id" name="patient-id" required>
-                </div>
+  <!-- ============================
+       HERO SECTION
+  ============================ -->
+  <main class="content">
+    <section class="hero">
+      <h2>Welcome to the Patient Management System</h2>
+      <p>
+        Manage patient records, doctor schedules, and appointments — all in one secure, efficient platform.
+      </p>
+      <button class="btn-submit" onclick="location.href='patients.html'">Get Started</button>
+    </section>
 
-                <div class="form-group">
-                    <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="full-name" required>
-                </div>
+    <!-- ============================
+         FEATURE CARDS
+    ============================ -->
+    <section class="cards">
+      <div class="card">
+        <h3>🧍 Patients</h3>
+        <p>Register and manage patient information efficiently.</p>
+        <button onclick="location.href='patients.html'">View Patients</button>
+      </div>
 
-                <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob" name="dob" required>
-                </div>
+      <div class="card">
+        <h3>🩺 Doctors</h3>
+        <p>Assign and monitor doctors, their specializations, and availability.</p>
+        <button onclick="location.href='doctors.html'">View Doctors</button>
+      </div>
 
-                <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select id="gender" name="gender" required>
-                        <option value="">Select</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
+      <div class="card">
+        <h3>📅 Appointments</h3>
+        <p>Schedule, update, and track all patient appointments.</p>
+        <button onclick="location.href='appointments.html'">View Appointments</button>
+      </div>
 
-                <div class="form-group">
-                    <label for="admission-date">Admission Date</label>
-                    <input type="date" id="admission-date" name="admission-date" required>
-                </div>
+      <div class="card">
+        <h3>📊 Reports</h3>
+        <p>Generate and download detailed system reports anytime.</p>
+        <button onclick="location.href='reports.html'">View Reports</button>
+      </div>
+    </section>
 
-                <div class="form-group">
-                    <label for="ward-bed">Ward & Bed Number</label>
-                    <input type="text" id="ward-bed" name="ward-bed" placeholder="e.g., Ward A, Bed 12" required>
-                </div>
+    <!-- ============================
+         ABOUT SYSTEM
+    ============================ -->
+    <section class="form-section">
+      <h2>About the System</h2>
+      <p>
+        The Patient Management System is designed to simplify healthcare data handling by allowing hospitals and clinics
+        to manage patient and doctor records digitally. It improves accuracy, saves time, and enhances patient care by centralizing
+        all essential information in one secure platform.
+      </p>
+      <p>
+        This system was built using <b>HTML, CSS, and Flask (or PHP/MySQL)</b> for seamless integration between the user interface
+        and database operations.
+      </p>
+    </section>
 
-                <div class="form-group">
-                    <label for="admitting-reason">Reason for Admission</label>
-                    <textarea id="admitting-reason" name="admitting-reason" rows="4" required></textarea>
-                </div>
+    <!-- ============================
+         CONTACT / SUPPORT SECTION
+    ============================ -->
+    <section class="form-section">
+      <h2>Contact / Support</h2>
+      <p>If you need help, please reach out to the system administrator.</p>
+      <ul>
+        <li>Email: <a href="mailto:admin@hospital.com">admin@hospital.com</a></li>
+        <li>Phone: +254 712 345 678</li>
+      </ul>
+    </section>
+  </main>
 
-                <div class="form-actions">
-                    <button type="submit" class="btn primary-btn">Save Patient</button>
-                    <button type="reset" class="btn secondary-btn">Clear Form</button>
-                </div>
-            </form>
-        </main>
-    </div>
+  <!-- ============================
+       FOOTER
+  ============================ -->
+  <footer>
+    <p>© 2025 Patient Management System | Designed by Anita Muli</p>
+  </footer>
 
 </body>
 </html>

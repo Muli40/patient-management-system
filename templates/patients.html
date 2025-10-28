@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patients | Patient Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🩺 Patient Management</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="patients.html" class="active">Patients</a></li>
+        <li><a href="#">Doctors</a></li>
+        <li><a href="#">Appointments</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#" class="logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="content">
+    <h1>Patient Records</h1>
+    <p class="subtitle">View, add, update, and manage patient information efficiently.</p>
+
+    <!-- Add Patient Form -->
+    <section class="form-section">
+      <h2>Add New Patient</h2>
+      <form class="patient-form">
+        <div class="form-group">
+          <label>Full Name:</label>
+          <input type="text" placeholder="Enter patient full name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Age:</label>
+          <input type="number" placeholder="Enter age" required>
+        </div>
+
+        <div class="form-group">
+          <label>Gender:</label>
+          <select required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Contact Number:</label>
+          <input type="text" placeholder="Enter phone number" required>
+        </div>
+
+        <div class="form-group">
+          <label>Address:</label>
+          <textarea placeholder="Enter address"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Add Patient</button>
+      </form>
+    </section>
+
+    <!-- Patient Table -->
+    <section class="table-section">
+      <h2>Existing Patients</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Patient ID</th>
+            <th>Full Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Mary Wanjiru</td>
+            <td>32</td>
+            <td>Female</td>
+            <td>0712345678</td>
+            <td>Nairobi</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>John Kamau</td>
+            <td>40</td>
+            <td>Male</td>
+            <td>0723456789</td>
+            <td>Embu</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Patient Management System | Designed by Anita Muli</p>
+  </footer>
+</body>
+</html>
